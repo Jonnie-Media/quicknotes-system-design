@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="QuickNotes API client practice project">
+  <title>QuickNotes — API Client</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="api.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <header class="page-header">
+      <p class="eyebrow">QUICKNOTES</p>
+      <h1>Your notes, connected</h1>
+      <p class="intro">A small API client demonstrating how a notes app communicates with a server.</p>
+    </header>
+
+    <section class="panel" aria-labelledby="create-heading">
+      <h2 id="create-heading">Create a note</h2>
+      <form id="note-form">
+        <label for="title-input">Title <span aria-hidden="true">*</span></label>
+        <input id="title-input" name="title" type="text" maxlength="100"
+               required aria-describedby="title-help" placeholder="Give your note a title">
+        <small id="title-help">Required; maximum 100 characters.</small>
+
+        <label for="body-input">Note body <span class="optional">(optional)</span></label>
+        <textarea id="body-input" name="body" rows="4" placeholder="Write something worth remembering"></textarea>
+
+        <button id="submit-btn" type="submit">Create note</button>
+      </form>
+    </section>
+
+    <section class="notes-section" aria-labelledby="notes-heading">
+      <div class="section-heading">
+        <div>
+          <h2 id="notes-heading">Your notes</h2>
+          <p class="muted">The practice API returns sample posts.</p>
+        </div>
+        <button id="load-btn" type="button">Load notes</button>
+      </div>
+      <p id="status" class="status" role="status" aria-live="polite">Ready. Load notes or create one.</p>
+      <ul id="notes-list" aria-label="Notes list"></ul>
+    </section>
+    <footer>Practice client · JSONPlaceholder API · Do not enter private information</footer>
+  </main>
+</body>
+</html>
